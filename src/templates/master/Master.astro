@@ -14,9 +14,7 @@ const title = frontmatter.title;
          )
       }
       <title>
-         {
-            `${title ? title : ''}${title ? ' \u00B7 ' : ''}ekelof.net`
-         }
+         {`${title ? title : ''}${title ? ' \u00B7 ' : ''}ekelof.net`}
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {
@@ -26,32 +24,16 @@ const title = frontmatter.title;
       }
       <!-- Additional head elements -->
    </head>
-   <body>
-      <div class="layout">
-         <slot name="main-content">
-            <div class="body">
-               <main
-                  id="content"
-               >
-                  <div class="content-wrapper">
-                     {
-                        title && (
-                           <h1 class="doc-main-heading">
-                              {title}
-                           </h1>
-                        )
-                     }
-                      <picture>
-                          <source srcset="images/oak-leaves.avif" type="image/avif">
-                          <source srcset="images/oak-leaves.webp" type="image/webp">
-                          <img src="images/oak-leaves.jpg" alt="Oak leaves">
-                      </picture>
-                     <slot />
-                  </div>
-               </main>
-               <slot name="sidenav" />
-            </div>
-         </slot>
-      </div>
+   <body class={frontmatter.template ? `tmpl-${frontmatter.template}` : ''}>
+      <slot name="body-content">
+         <div class="body">
+            <main id="content">
+               <div class="content-wrapper">
+                  {title && <h1 class="doc-main-heading">{title}</h1>}
+                  <slot />
+               </div>
+            </main>
+         </div>
+      </slot>
    </body>
 </html>

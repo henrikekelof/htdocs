@@ -4,5 +4,10 @@ const { frontmatter } = Astro.props;
 ---
 
 <Master frontmatter={frontmatter}>
+   <picture slot="body-content" class="oak-leaves">
+      <source srcset="images/oak-leaves.avif" type="image/avif" />
+      <source srcset="images/oak-leaves.webp" type="image/webp" />
+      <img src="images/oak-leaves.jpg" alt="Oak leaves" />
+   </picture>
    <slot />
 </Master>

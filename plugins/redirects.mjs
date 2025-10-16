@@ -2,5 +2,5 @@
 // old path: new path.
 
 export const redirects = {
-  '/test-redirect-from/': '/test-redirect-to',
+   '/test-redirect-from/': '/test-redirect-to',
 };

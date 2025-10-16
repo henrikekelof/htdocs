@@ -1,6 +1,4 @@
 ---
 template: startpage
-description: Startpage
+indexing: false
 ---
-
-
