@@ -1,0 +1,8 @@
+---
+import Master from './master/Master.astro';
+const { frontmatter } = Astro.props;
+---
+
+<Master frontmatter={frontmatter}>
+   <slot />
+</Master>
