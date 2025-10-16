@@ -7,7 +7,7 @@ import { remarkClassNames } from './plugins/remark-class-names.mjs';
 const ASSETS_FOLDER = 'assets';
 
 export default defineConfig({
-  site: 'https://ekelof.net',
+  site: 'https://henrikekelof.github.io/htdocs/',
   base: '/',
   root: '.',
   outDir: './dist',
