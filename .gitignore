@@ -1,0 +1,15 @@
+# build output
+dist/
+
+# generated types
+.astro/
+.vscode
+
+# dependencies
+node_modules/
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
