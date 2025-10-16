@@ -1847,4 +1847,4 @@ async function renderScript(result, id) {
 "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_".split("").reduce((v, c) => (v[c.charCodeAt(0)] = c, v), []);
 "-0123456789_".split("").reduce((v, c) => (v[c.charCodeAt(0)] = c, v), []);
 
-export { NOOP_MIDDLEWARE_HEADER as N, renderScript as a, renderTemplate as b, createComponent as c, createAstro as d, addAttribute as e, renderSlot as f, renderComponent as g, decodeKey as h, maybeRenderHead as m, renderHead as r, unescapeHTML as u };
+export { NOOP_MIDDLEWARE_HEADER as N, renderTemplate as a, createAstro as b, createComponent as c, renderComponent as d, renderSlot as e, renderScript as f, addAttribute as g, decodeKey as h, maybeRenderHead as m, renderHead as r, unescapeHTML as u };
