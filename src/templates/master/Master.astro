@@ -1,7 +1,7 @@
 ---
-const { frontmatter } = Astro.props;
+const { frontmatter, indexing } = Astro.props;
 import '../../assets/scss/docs.scss';
-const title = frontmatter.title;
+const title = frontmatter?.title || '';
 ---
 
 <!doctype html>
@@ -9,7 +9,7 @@ const title = frontmatter.title;
    <head>
       <meta charset="utf-8" />
       {
-         frontmatter.indexing === false && (
+         frontmatter?.indexing === false || indexing === false && (
             <meta name="robots" content="noindex" />
          )
       }
@@ -18,13 +18,13 @@ const title = frontmatter.title;
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {
-         frontmatter.description && (
-            <meta name="description" content={frontmatter.description} />
+         frontmatter?.description && (
+            <meta name="description" content={frontmatter?.description} />
          )
       }
       <!-- Additional head elements -->
    </head>
-   <body class={frontmatter.template ? `tmpl-${frontmatter.template}` : ''}>
+   <body class={frontmatter?.template ? `tmpl-${frontmatter?.template}` : ''}>
       <slot name="body-content">
          <div class="body">
             <main id="content">
