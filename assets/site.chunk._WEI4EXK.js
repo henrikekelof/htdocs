@@ -1,4 +1,4 @@
-import { c as createComponent, b as createAstro, r as renderHead, g as addAttribute, e as renderSlot, a as renderTemplate } from './docs.chunk.CQus0mYN.js';
+import { c as createComponent, e as createAstro, r as renderHead, g as addAttribute, f as renderSlot, a as renderTemplate } from './site.chunk.CtnFoe_2.js';
 import 'kleur/colors';
 import 'html-escaper';
 import 'clsx';
@@ -8,14 +8,14 @@ const $$Astro = createAstro();
 const $$Master = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Master;
-  const { frontmatter, indexing } = Astro2.props;
-  const title = frontmatter?.title || "";
+  const { frontmatter, indexing, title } = Astro2.props;
+  const _title = frontmatter?.title || title || "";
   return renderTemplate`<html lang="en">
    <head>
       <meta charset="utf-8">
-      ${frontmatter?.indexing === false || indexing === false && renderTemplate`<meta name="robots" content="noindex">`}
+      ${(frontmatter?.indexing === false || indexing === false) && renderTemplate`<meta name="robots" content="noindex">`}
       <title>
-         ${`${title ? title : ""}${title ? " \xB7 " : ""}ekelof.net`}
+         ${`${_title ? _title : ""}${_title ? " \xB7 " : ""}ekelof.net`}
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       ${frontmatter?.description && renderTemplate`<meta name="description"${addAttribute(frontmatter?.description, "content")}>`}
@@ -23,13 +23,13 @@ const $$Master = createComponent(($$result, $$props, $$slots) => {
    ${renderHead()}</head>
    <body${addAttribute(frontmatter?.template ? `tmpl-${frontmatter?.template}` : "", "class")}>
       ${renderSlot($$result, $$slots["body-content"], renderTemplate`
-         <div class="body">
-            <main id="content">
-               <div class="content-wrapper">
+         <div class="doc-layout">
+            <div class="doc-container">
+               <main class="doc-content doc-dynamic-font">
                   ${title && renderTemplate`<h1 class="doc-main-heading">${title}</h1>`}
                   ${renderSlot($$result, $$slots["default"])}
-               </div>
-            </main>
+               </main>
+            </div>
          </div>
       `)}
    </body></html>`;
