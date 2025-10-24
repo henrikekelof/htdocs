@@ -12,7 +12,7 @@ export default defineConfig({
    root: '.',
    outDir: './dist',
    publicDir: './static',
-   trailingSlash: 'ignore',
+   trailingSlash: 'always',
    redirects: redirects,
    output: 'static',
    compressHTML: false,
