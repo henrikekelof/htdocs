@@ -1,0 +1,20 @@
+.doc-alert {
+   background-color: var(--doc-alert-info-bg);
+   color: var(--doc-alert-info-txt);
+   border-radius: 0.25em;
+   margin: 1em 0;
+   padding: 0.5em 1em;
+
+   &--success {
+      background-color: var(--doc-alert-success-bg);
+      color: var(--doc-alert-success-txt);
+   }
+   &--error {
+      background-color: var(--doc-alert-error-bg);
+      color: var(--doc-alert-error-txt);
+   }
+   &--warning {
+      background-color: var(--doc-alert-warning-bg);
+      color: var(--doc-alert-warning-txt);
+   }
+}

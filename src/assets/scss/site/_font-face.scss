@@ -1,0 +1,88 @@
+@mixin font-face($familyName, $style, $weight, $fileName) {
+   @font-face {
+      font-display: block;
+      font-family: $familyName;
+      font-style: $style;
+      font-weight: $weight;
+      src: url('#{$fileName}.woff2') format('woff2');
+   }
+}
+
+// Sans-serif font for body text
+$weights: 300, 400, 500, 600, 700, 800;
+@each $weight in $weights {
+   @include font-face(
+      'Open Sans',
+      normal,
+      $weight,
+      '/fonts/open-sans/open-sans-v40-latin-#{$weight}'
+   );
+   @include font-face(
+      'Open Sans',
+      italic,
+      $weight,
+      '/fonts/open-sans/open-sans-v40-latin-#{$weight}italic'
+   );
+}
+
+// Serif font for headings etc.
+$weights: 400, 500, 600, 700, 800, 900;
+@each $weight in $weights {
+   @include font-face(
+      'Vollkorn',
+      normal,
+      $weight,
+      '/fonts/vollkorn/vollkorn-v23-latin-#{$weight}'
+   );
+   @include font-face(
+      'Vollkorn',
+      italic,
+      $weight,
+      '/fonts/vollkorn/vollkorn-v23-latin-#{$weight}italic'
+   );
+}
+
+// Condensed sans-serif font for titles, logos etc.
+$weights: 200, 300, 400, 500, 600, 700;
+@each $weight in $weights {
+   @include font-face(
+      'Oswald',
+      normal,
+      $weight,
+      '/fonts/oswald/oswald-v53-latin-#{$weight}'
+   );
+}
+
+// Cursive, handwriting style font
+$weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+@each $weight in $weights {
+   @include font-face(
+      'Grandstander',
+      normal,
+      $weight,
+      '/fonts/grandstander/grandstander-v17-latin-#{$weight}'
+   );
+   @include font-face(
+      'Grandstander',
+      italic,
+      $weight,
+      '/fonts/grandstander/grandstander-v17-latin-#{$weight}italic'
+   );
+}
+
+// Monospace font for code blocks
+$weights: 100, 200, 300, 400, 500, 600, 700, 800;
+@each $weight in $weights {
+   @include font-face(
+      'JetBrains Mono',
+      normal,
+      $weight,
+      '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-#{$weight}'
+   );
+   @include font-face(
+      'JetBrains Mono',
+      italic,
+      $weight,
+      '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-#{$weight}italic'
+   );
+}

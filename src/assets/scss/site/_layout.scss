@@ -1,0 +1,15 @@
+.doc-layout {
+   max-width: 55em;
+   margin: 0 auto;
+}
+
+.doc-content {
+   background-color: var(--doc-section-bg);
+   margin: 0.5em;
+   padding: 0.5em;
+
+   @media (min-width: 641px) {
+      margin: 2em;
+      padding: 2em;
+   }
+}

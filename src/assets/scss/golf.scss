@@ -1,0 +1,94 @@
+.scorecard {
+   border-collapse: collapse;
+   font-family: 'Open Sans';
+   margin: 2em 0;
+}
+.scorecard caption {
+   /*font-family: "Oswald";*/
+   font-weight: 600;
+   font-size: 0.9em;
+   /*text-transform: uppercase;*/
+   /*letter-spacing: 0.1em;*/
+   text-align: center;
+   margin: 0 0 0.5em;
+   /*border-bottom: 3px dotted var(--text-light);*/
+}
+.scorecard th,
+.scorecard td {
+   position: relative;
+   border: 1px solid var(--text-light);
+   text-align: center;
+   vertical-align: middle;
+   line-height: 1;
+   padding: 0.05em;
+   white-space: nowrap;
+}
+.scorecard th {
+   font-size: 0.7em;
+   font-weight: 300;
+   text-transform: uppercase;
+}
+.scorecard th.h {
+   width: 4.5em;
+}
+.scorecard th.hl {
+   background-color: var(--bg-blue);
+}
+.scorecard th.hp {
+   width: 3em;
+   border-right: 2px solid var(--text-light);
+}
+.scorecard th.p {
+   width: 3em;
+   font-size: 1em;
+   font-weight: 700;
+}
+.scorecard--points th.p {
+   width: 4.5em;
+}
+
+.scorecard--points td:nth-child(4),
+.scorecard--points td:nth-child(6),
+.scorecard--points td:nth-child(8) {
+   width: 1.9em;
+}
+
+.scorecard td.l {
+   background-color: var(--bg-blue);
+}
+
+.scorecard--points th:nth-child(4),
+.scorecard--points td:nth-child(4),
+.scorecard--points td:nth-child(5),
+.scorecard--points th:nth-child(6),
+.scorecard--points td:nth-child(8),
+.scorecard--points td:nth-child(9),
+.scorecard:not(.scorecard--points) th:nth-child(4),
+.scorecard:not(.scorecard--points) td:nth-child(4),
+.scorecard:not(.scorecard--points) th:nth-child(6),
+.scorecard:not(.scorecard--points) td:nth-child(6) {
+   background-color: var(--bg-gray);
+}
+
+.scorecard td.p {
+   border-right: 2px solid var(--text-light);
+}
+.scorecard td.s {
+   font-family: Grandstander;
+   font-size: 1.3em;
+   font-weight: 600;
+   /*padding-top: 0.3em;*/
+   padding: 0.3em 0.1em 0;
+}
+
+.scorecard td.birdie:after {
+   content: '';
+   display: block;
+   position: absolute;
+   width: 1em;
+   height: 1em;
+   border-radius: 50%;
+   inset: 50% auto auto 50%;
+   transform: translate(-50%, -50%);
+   border: 2px solid currentColor;
+}

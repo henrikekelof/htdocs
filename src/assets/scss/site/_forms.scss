@@ -1,0 +1,71 @@
+input,
+textarea,
+.doc-input {
+   display: block;
+   width: 100%;
+   margin: 0;
+   padding: 0.325em 0.75em;
+   font-family: var(--doc-font);
+   font-size: 1em;
+   line-height: 1.375;
+   color: var(--doc-form-input-txt);
+   background-color: var(--doc-form-input-bg);
+   background-image: none;
+   border: 1px solid var(--doc-form-input-border);
+   border-radius: 0.25em;
+
+   &:read-only {
+      filter: opacity(0.5); // grayscale(100%);
+   }
+}
+
+textarea.doc-input {
+   resize: vertical;
+   min-height: 2.75em;
+}
+textarea.doc-input--code {
+   font-family: var(--doc-code-font);
+   font-size: 0.75em;
+}
+
+.doc-button {
+   appearance: none;
+   border: none;
+   box-sizing: border-box;
+   cursor: pointer;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   font-family: var(--doc-font);
+   margin: 0;
+   text-align: center;
+   text-decoration: none;
+   user-select: none;
+   vertical-align: middle;
+   line-height: 1;
+   font-size: 1em;
+   padding: 0 1.3125em;
+   border-radius: 0.25em;
+   min-height: 2.75em;
+
+   &--primary {
+      background-color: var(--doc-button-primary-bg);
+      color: var(--doc-button-primary-txt);
+   }
+   background-color: var(--doc-button-bg);
+   color: var(--doc-button-txt);
+
+   &--small {
+      padding: 0 0.5em;
+      //border-radius: 0.;
+      min-height: 2em;
+   }
+   &:hover {
+      background-color: var(--doc-button-hover-bg);
+   }
+
+   &[disabled] {
+      filter: opacity(0.65); // grayscale(100%);
+      pointer-events: none;
+   }
+}

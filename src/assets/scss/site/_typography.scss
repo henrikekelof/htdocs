@@ -1,0 +1,106 @@
+h1,
+h2,
+.doc-heading-1 {
+   font-family: 'Oswald';
+   font-weight: 600;
+   font-size: 2em;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+   text-align: center;
+   color: var(--doc-txt-medium);
+   //padding: 0 0 1em;
+   margin: 0 0 1em;
+   //border-bottom: 3px dotted var(--doc-border);
+}
+
+//h1,
+//h2 {
+//   color: var(--text-gray);
+//   font-family: "Oswald";
+//   font-weight: 600;
+//   font-size: 3em;
+//   text-transform: uppercase;
+//   letter-spacing: 0.1em;
+//   text-align: center;
+//   padding: 0 0 1em;
+//   margin: 0 0 1em;
+//   border-bottom: 3px dotted var(--text-light);
+//}
+
+h2 {
+   font-size: 1.5em;
+   margin: 2em 0 1em;
+}
+
+h3,
+.subTitle,
+.cover__heading,
+.cover__subTitle {
+   font-family: 'Vollkorn';
+   font-style: italic;
+   font-weight: 400;
+   font-size: 1.5em;
+   color: var(--doc-txt-light);
+   text-align: center;
+   margin: 0;
+}
+
+.titleAliases {
+   font-family: 'Vollkorn';
+   font-style: italic;
+   font-weight: 200;
+   font-size: 1em;
+   color: var(--doc-txt-light);
+   text-align: center;
+   margin: 0;
+}
+
+h3 {
+   margin: 2em 0 0.5em;
+}
+
+.subTitle {
+   margin: 6em 0 0;
+}
+
+.cover__heading,
+.cover__subTitle {
+   letter-spacing: 0.1em;
+   margin: 2em 0 1em;
+}
+.cover__subTitle {
+   text-transform: uppercase;
+}
+
+h4,
+h5,
+h6 {
+   font-family: 'Open Sans';
+   font-weight: 600;
+   font-size: 1.2em;
+   text-align: center;
+   color: var(--doc-txt-light);
+   margin: 2em 0 0.5em;
+}
+
+h5,
+h6 {
+   font-size: 1em;
+}
+
+.doc-p {
+   margin: 0 0 1em;
+}
+
+//const CLASS_MAP = {
+//heading: `${PREFIX}-heading`, // Handled separately to add depth
+//paragraph: `${PREFIX}-p`,
+//blockquote: `${PREFIX}-blockquote`,
+//emphasis: `${PREFIX}-em`,
+//strong: `${PREFIX}-strong`,
+//inlineCode: `${PREFIX}-code`,
+//link: `${PREFIX}-link`,
+//list: `${PREFIX}-list`,
+//listItem: `${PREFIX}-list__item`,
+//image: `${PREFIX}-image`,
+//table: `${PREFIX}-table`,

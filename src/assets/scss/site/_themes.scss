@@ -1,0 +1,87 @@
+:root {
+   --doc-font: 'Open Sans', sans-serif;
+
+   --doc-heading-font: Oswald, sans-serif;
+   --doc-alt-heading-font: 'Vollkorn', serif;
+   --doc-code-font: 'JetBrains Mono', monospace;
+
+   --doc-bg: #f8f9fa;
+   --doc-section-bg: #ffffff;
+
+   --doc-txt: #1e1e1e;
+   --doc-txt-medium: #444444;
+   --doc-txt-light: #595959;
+
+   --doc-link-txt: #2b5eff;
+   --doc-link-text-decoration: none;
+
+   --doc-border: #949494;
+
+   //--doc-color-brand: #e4fb09;
+   //--doc-color-brand-contrast: #000000;
+
+   --doc-code-bg: #eee;
+   --doc-code-txt: #000;
+
+   --doc-form-input-txt: var(--doc-txt);
+   --doc-form-input-bg: var(--doc-section-bg);
+   --doc-form-input-border: var(--doc-border);
+
+   --doc-focus-outline: var(--doc-txt);
+   --doc-focus-inner: var(--doc-section-bg);
+
+   --doc-button-bg: #dadddf;
+   --doc-button-hover-bg: #cbcfd2;
+   --doc-button-txt: #000;
+   --doc-button-primary-bg: #3a71aa;
+   --doc-button-primary-hover-bg: #305d8c;
+   --doc-button-primary-txt: #fff;
+
+   --doc-alert-success-bg: #edf7ed;
+   --doc-alert-success-txt: #1d4620;
+   --doc-alert-info-bg: #e3f7fd;
+   --doc-alert-info-txt: #014362;
+   --doc-alert-warning-bg: #fff5e4;
+   --doc-alert-warning-txt: #663c00;
+   --doc-alert-error-bg: #feecec;
+   --doc-alert-error-txt: #5f2120;
+}
+
+@media (prefers-color-scheme: dark) {
+   :root {
+      --doc-bg: #121417;
+      --doc-section-bg: #1b1e22;
+
+      --doc-txt: #f1f2f3;
+      --doc-txt-medium: #cfd3d7;
+      --doc-txt-light: #a8adb3;
+
+      --doc-link-txt: #7ea7ff;
+      --doc-link-text-decoration: none;
+
+      --doc-border: #33373d;
+
+      --doc-code-bg: #1e2126;
+      --doc-code-txt: #e8e8e8;
+
+      --doc-button-bg: #2a2f35;
+      --doc-button-hover-bg: #353b42;
+      --doc-button-txt: #e9eaec;
+
+      --doc-button-primary-bg: #3a71aa;
+      --doc-button-primary-hover-bg: #305d8c;
+      --doc-button-primary-txt: #ffffff;
+
+      --doc-alert-success-bg: #15361a;
+      --doc-alert-success-txt: #c5ebca;
+
+      --doc-alert-info-bg: #0f2d3a;
+      --doc-alert-info-txt: #a9dbef;
+
+      --doc-alert-warning-bg: #3a2a0d;
+      --doc-alert-warning-txt: #f3d49a;
+
+      --doc-alert-error-bg: #3a1414;
+      --doc-alert-error-txt: #f2b8b8;
+   }
+}

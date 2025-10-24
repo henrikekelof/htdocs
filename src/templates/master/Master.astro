@@ -1,7 +1,7 @@
 ---
-const { frontmatter, indexing } = Astro.props;
-import '../../assets/scss/docs.scss';
-const title = frontmatter?.title || '';
+const { frontmatter, indexing, title } = Astro.props;
+import '../../assets/scss/site.scss';
+const _title = frontmatter?.title || title || '';
 ---
 
 <!doctype html>
@@ -9,12 +9,12 @@ const title = frontmatter?.title || '';
    <head>
       <meta charset="utf-8" />
       {
-         frontmatter?.indexing === false || indexing === false && (
+         (frontmatter?.indexing === false || indexing === false) && (
             <meta name="robots" content="noindex" />
          )
       }
       <title>
-         {`${title ? title : ''}${title ? ' \u00B7 ' : ''}ekelof.net`}
+         {`${_title ? _title : ''}${_title ? ' \u00B7 ' : ''}ekelof.net`}
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {
@@ -26,13 +26,13 @@ const title = frontmatter?.title || '';
    </head>
    <body class={frontmatter?.template ? `tmpl-${frontmatter?.template}` : ''}>
       <slot name="body-content">
-         <div class="body">
-            <main id="content">
-               <div class="content-wrapper">
+         <div class="doc-layout">
+            <div class="doc-container">
+               <main class="doc-content doc-dynamic-font">
                   {title && <h1 class="doc-main-heading">{title}</h1>}
                   <slot />
-               </div>
-            </main>
+               </main>
+            </div>
          </div>
       </slot>
    </body>

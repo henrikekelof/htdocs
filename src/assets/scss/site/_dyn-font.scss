@@ -1,0 +1,114 @@
+.doc-container {
+   container-type: inline-size;
+}
+:root {
+   --doc-root-font-size: 16;
+   --doc-dynamic-font-scale: 1.25;
+   --doc-dynamic-font-from-width: 400;
+   --doc-dynamic-font-to-width: 750;
+}
+.doc-dynamic-font {
+   --df-root: var(--doc-root-font-size);
+   --df-scale: var(--doc-dynamic-font-scale);
+   --df-from-width: var(--doc-dynamic-font-from-width);
+   --df-to-width: var(--doc-dynamic-font-to-width);
+   --df-from-font-size: 1;
+   --df-to-font-size: var(--df-scale) * var(--df-from-font-size);
+   --df-slope: calc(
+      (var(--df-to-font-size) - var(--df-from-font-size)) /
+         (
+            var(--df-to-width) /
+               var(--doc-root-font-size) - var(--df-from-width) /
+               var(--doc-root-font-size)
+         )
+   );
+   --df-yaxis: calc(
+      (
+            var(--df-from-width) / var(--doc-root-font-size) * -1 *
+               var(--df-slope) + var(--df-from-font-size)
+         ) *
+         1rem
+   );
+   box-sizing: border-box;
+   font-size: clamp(
+      var(--df-from-font-size) * 1em,
+      var(--df-yaxis) + var(--df-slope) * 100cqw,
+      var(--df-to-font-size) * 1em
+   );
+}
+.doc-dynamic-font--scale-1_125 {
+   --doc-dynamic-font-scale: 1.125;
+}
+.doc-dynamic-font--scale-1_25 {
+   --doc-dynamic-font-scale: 1.25;
+}
+.doc-dynamic-font--scale-1_375 {
+   --doc-dynamic-font-scale: 1.375;
+}
+.doc-dynamic-font--scale-1_5 {
+   --doc-dynamic-font-scale: 1.5;
+}
+.doc-dynamic-font--scale-1_625 {
+   --doc-dynamic-font-scale: 1.625;
+}
+.doc-dynamic-font--scale-1_75 {
+   --doc-dynamic-font-scale: 1.75;
+}
+.doc-dynamic-font--scale-1_875 {
+   --doc-dynamic-font-scale: 1.875;
+}
+.doc-dynamic-font--scale-2 {
+   --doc-dynamic-font-scale: 2;
+}
+.doc-dynamic-font--from-250 {
+   --doc-dynamic-font-from-width: 250;
+}
+.doc-dynamic-font--from-300 {
+   --doc-dynamic-font-from-width: 300;
+}
+.doc-dynamic-font--from-350 {
+   --doc-dynamic-font-from-width: 350;
+}
+.doc-dynamic-font--from-400 {
+   --doc-dynamic-font-from-width: 400;
+}
+.doc-dynamic-font--from-450 {
+   --doc-dynamic-font-from-width: 450;
+}
+.doc-dynamic-font--from-500 {
+   --doc-dynamic-font-from-width: 500;
+}
+.doc-dynamic-font--from-550 {
+   --doc-dynamic-font-from-width: 550;
+}
+.doc-dynamic-font--to-500 {
+   --doc-dynamic-font-to-width: 500;
+}
+.doc-dynamic-font--to-550 {
+   --doc-dynamic-font-to-width: 550;
+}
+.doc-dynamic-font--to-600 {
+   --doc-dynamic-font-to-width: 600;
+}
+.doc-dynamic-font--to-650 {
+   --doc-dynamic-font-to-width: 650;
+}
+.doc-dynamic-font--to-700 {
+   --doc-dynamic-font-to-width: 700;
+}
+.doc-dynamic-font--to-750 {
+   --doc-dynamic-font-to-width: 750;
+}
+.doc-dynamic-font--to-800 {
+   --doc-dynamic-font-to-width: 800;
+}
+.doc-dynamic-font--to-900 {
+   --doc-dynamic-font-to-width: 900;
+}
+.doc-dynamic-font--to-1000 {
+   --doc-dynamic-font-to-width: 1000;
+}
+.doc-dynamic-font--downscale {
+   --df-from-font-size: 1 / var(--df-scale);
+   --df-to-font-size: 1;
+}

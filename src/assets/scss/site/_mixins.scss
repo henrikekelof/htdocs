@@ -1,0 +1,11 @@
+@mixin focus-outline() {
+   box-shadow: 0 0 0 2px var(--doc-focus-inner);
+   outline: 2px solid var(--doc-focus-outline);
+   outline-offset: 2px;
+}
+
+@mixin focus-visible {
+   &:focus-visible {
+      @include focus-outline;
+   }
+}

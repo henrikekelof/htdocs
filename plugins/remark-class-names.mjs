@@ -2,18 +2,20 @@ export function remarkClassNames() {
    // Loosely based on gatsby-remark-classes
    // https://github.com/chrisg86/gatsby-remark-classes/tree/main
 
+   const PREFIX = 'doc';
+
    const CLASS_MAP = {
-      heading: 'doc-heading', // Handled separately to add depth
-      paragraph: 'doc-p',
-      blockquote: 'doc-blockquote',
-      emphasis: 'doc-em',
-      strong: 'doc-strong',
-      inlineCode: 'doc-code',
-      link: 'doc-link',
-      list: 'doc-list',
-      listItem: 'doc-list__item',
-      image: 'doc-image',
-      table: 'doc-table',
+      heading: `${PREFIX}-heading`, // Handled separately to add depth
+      paragraph: `${PREFIX}-p`,
+      blockquote: `${PREFIX}-blockquote`,
+      emphasis: `${PREFIX}-em`,
+      strong: `${PREFIX}-strong`,
+      inlineCode: `${PREFIX}-code`,
+      link: `${PREFIX}-link`,
+      list: `${PREFIX}-list`,
+      listItem: `${PREFIX}-list__item`,
+      image: `${PREFIX}-image`,
+      table: `${PREFIX}-table`,
    };
 
    const applyClassesToNode = (node, classes) => {

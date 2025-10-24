@@ -7,7 +7,7 @@ import { remarkClassNames } from './plugins/remark-class-names.mjs';
 const ASSETS_FOLDER = 'assets';
 
 export default defineConfig({
-   site: 'https://henrikekelof.github.io/htdocs/',
+   site: 'https://ekelof.net/',
    base: '/',
    root: '.',
    outDir: './dist',
@@ -41,9 +41,9 @@ export default defineConfig({
       build: {
          rollupOptions: {
             output: {
-               entryFileNames: `${ASSETS_FOLDER}/docs.[hash].js`,
-               chunkFileNames: `${ASSETS_FOLDER}/docs.chunk.[hash].js`,
-               assetFileNames: `${ASSETS_FOLDER}/docs.[hash][extname]`,
+               entryFileNames: `${ASSETS_FOLDER}/site.[hash].js`,
+               chunkFileNames: `${ASSETS_FOLDER}/site.chunk.[hash].js`,
+               assetFileNames: `${ASSETS_FOLDER}/site.[hash][extname]`,
             },
          },
       },
