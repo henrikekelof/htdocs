@@ -8,25 +8,29 @@ const $$Astro = createAstro();
 const $$Master = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Master;
-  const { frontmatter, indexing, title } = Astro2.props;
+  const { frontmatter, indexing, title, heading, className } = Astro2.props;
   const _title = frontmatter?.title || title || "";
+  const _indexing = frontmatter?.indexing || indexing || false;
+  const _className = frontmatter?.className || className || "";
+  const showHeading = heading !== false;
   return renderTemplate`<html lang="en">
    <head>
       <meta charset="utf-8">
-      ${(frontmatter?.indexing === false || indexing === false) && renderTemplate`<meta name="robots" content="noindex">`}
+      ${_indexing === false && renderTemplate`<meta name="robots" content="noindex">`}
       <title>
          ${`${_title ? _title : ""}${_title ? " \xB7 " : ""}ekelof.net`}
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       ${frontmatter?.description && renderTemplate`<meta name="description"${addAttribute(frontmatter?.description, "content")}>`}
+      <link rel="icon" href="/favicon.ico" sizes="48x48">
       <!-- Additional head elements -->
    ${renderHead()}</head>
-   <body${addAttribute(frontmatter?.template ? `tmpl-${frontmatter?.template}` : "", "class")}>
+   <body${addAttribute(_className ? `${_className}` : "", "class")}>
       ${renderSlot($$result, $$slots["body-content"], renderTemplate`
          <div class="doc-layout">
             <div class="doc-container">
                <main class="doc-content doc-dynamic-font">
-                  ${title && renderTemplate`<h1 class="doc-main-heading">${title}</h1>`}
+                  ${showHeading && title && renderTemplate`<h1 class="doc-main-heading">${title}</h1>`}
                   ${renderSlot($$result, $$slots["default"])}
                </main>
             </div>
