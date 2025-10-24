@@ -1,6 +1,10 @@
 .doc-layout {
    max-width: 55em;
    margin: 0 auto;
+
+   body.wide & {
+      max-width: none;
+   }
 }
 
 .doc-content {

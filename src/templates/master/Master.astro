@@ -1,18 +1,17 @@
 ---
-const { frontmatter, indexing, title } = Astro.props;
+const { frontmatter, indexing, title, heading, className } = Astro.props;
 import '../../assets/scss/site.scss';
 const _title = frontmatter?.title || title || '';
+const _indexing = frontmatter?.indexing || indexing || false;
+const _className = frontmatter?.className || className || '';
+const showHeading = heading !== false;
 ---
 
 <!doctype html>
 <html lang="en">
    <head>
       <meta charset="utf-8" />
-      {
-         (frontmatter?.indexing === false || indexing === false) && (
-            <meta name="robots" content="noindex" />
-         )
-      }
+      {_indexing === false && <meta name="robots" content="noindex" />}
       <title>
          {`${_title ? _title : ''}${_title ? ' \u00B7 ' : ''}ekelof.net`}
       </title>
@@ -22,14 +21,19 @@ const _title = frontmatter?.title || title || '';
             <meta name="description" content={frontmatter?.description} />
          )
       }
+      <link rel="icon" href="/favicon.ico" sizes="48x48" />
       <!-- Additional head elements -->
    </head>
-   <body class={frontmatter?.template ? `tmpl-${frontmatter?.template}` : ''}>
+   <body class={_className ? `${_className}` : ''}>
       <slot name="body-content">
          <div class="doc-layout">
             <div class="doc-container">
                <main class="doc-content doc-dynamic-font">
-                  {title && <h1 class="doc-main-heading">{title}</h1>}
+                  {
+                     showHeading && title && (
+                        <h1 class="doc-main-heading">{title}</h1>
+                     )
+                  }
                   <slot />
                </main>
             </div>
