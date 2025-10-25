@@ -8,10 +8,10 @@ const $$Astro = createAstro();
 const $$Master = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Master;
-  const { frontmatter, indexing, title, heading, className } = Astro2.props;
+  const { frontmatter, indexing, title, heading, bodyClass } = Astro2.props;
   const _title = frontmatter?.title || title || "";
   const _indexing = frontmatter?.indexing || indexing || false;
-  const _className = frontmatter?.className || className || "";
+  const _bodyClass = frontmatter?.bodyClass || bodyClass || "";
   const showHeading = heading !== false;
   return renderTemplate`<html lang="en">
    <head>
@@ -25,12 +25,12 @@ const $$Master = createComponent(($$result, $$props, $$slots) => {
       <link rel="icon" href="/favicon.ico" sizes="48x48">
       <!-- Additional head elements -->
    ${renderHead()}</head>
-   <body${addAttribute(_className ? `${_className}` : "", "class")}>
+   <body${addAttribute(_bodyClass ? `${_bodyClass}` : "", "class")}>
       ${renderSlot($$result, $$slots["body-content"], renderTemplate`
          <div class="doc-layout">
             <div class="doc-container">
                <main class="doc-content doc-dynamic-font">
-                  ${showHeading && title && renderTemplate`<h1 class="doc-main-heading">${title}</h1>`}
+                  ${showHeading && _title && renderTemplate`<h1 class="doc-main-heading">${_title}</h1>`}
                   ${renderSlot($$result, $$slots["default"])}
                </main>
             </div>
