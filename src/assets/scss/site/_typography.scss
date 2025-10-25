@@ -1,5 +1,31 @@
 h1,
 h2,
+.doc-main-heading,
+.doc-heading-1 {
+   font-family: 'Oswald';
+   font-weight: 600;
+   font-size: 2em;
+   text-align: center;
+   color: var(--doc-txt-medium);
+   //padding: 0 0 1em;
+   margin: 0 0 1em;
+   //border-bottom: 3px dotted var(--doc-border);
+}
+
+.doc-icon {
+   display: inline-block;
+   width: 0.875em;
+   height: 0.875em;
+   stroke-width: 0;
+   stroke: currentColor;
+   fill: none;
+}
+
+.doc-heading-1 {
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+}
+
 .doc-heading-1 {
    font-family: 'Oswald';
    font-weight: 600;
