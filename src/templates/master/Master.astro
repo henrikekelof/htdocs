@@ -1,9 +1,9 @@
 ---
-const { frontmatter, indexing, title, heading, className } = Astro.props;
+const { frontmatter, indexing, title, heading, bodyClass } = Astro.props;
 import '../../assets/scss/site.scss';
 const _title = frontmatter?.title || title || '';
 const _indexing = frontmatter?.indexing || indexing || false;
-const _className = frontmatter?.className || className || '';
+const _bodyClass = frontmatter?.bodyClass || bodyClass || '';
 const showHeading = heading !== false;
 ---
 
@@ -24,14 +24,14 @@ const showHeading = heading !== false;
       <link rel="icon" href="/favicon.ico" sizes="48x48" />
       <!-- Additional head elements -->
    </head>
-   <body class={_className ? `${_className}` : ''}>
+   <body class={_bodyClass ? `${_bodyClass}` : ''}>
       <slot name="body-content">
          <div class="doc-layout">
             <div class="doc-container">
                <main class="doc-content doc-dynamic-font">
                   {
-                     showHeading && title && (
-                        <h1 class="doc-main-heading">{title}</h1>
+                     showHeading && _title && (
+                        <h1 class="doc-main-heading">{_title}</h1>
                      )
                   }
                   <slot />
