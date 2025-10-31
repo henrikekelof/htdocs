@@ -1,9 +1,23 @@
+// Imports, variables
 @use 'site/font-face';
 @use 'site/themes';
+
+// Core styles
+@use 'site/css-starter';
 @use 'site/base';
+
+// Typography
 @use 'site/dyn-font';
-@use 'site/layout';
 @use 'site/typography';
+
+// Layout
+@use 'site/layout';
+
+// Forms
 @use 'site/forms';
+
+// Components
 @use 'site/alert';
+
+// Individual pages
 @use 'site/home-page';

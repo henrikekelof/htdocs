@@ -1,0 +1,95 @@
+@layer starter, core, components;
+
+@layer starter {
+   html {
+      color-scheme: light dark;
+      hanging-punctuation: first allow-end last;
+      font: 1em / 1.5 system-ui, sans-serif;
+      font: -apple-system-body;
+      line-height: 1.5;
+   }
+   @supports (font: -apple-system-body) and
+    (not (-webkit-touch-callout: default)) {
+      html {
+         font-size: 1em;
+      }
+   }
+
+   body {
+      margin: 0;
+      padding: 0;
+   }
+
+   *,
+   *::before,
+   *::after {
+      box-sizing: border-box;
+   }
+
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      text-wrap: balance;
+   }
+
+   p,
+   li,
+   dd {
+      text-wrap: pretty;
+   }
+
+   figure {
+      margin: 0;
+      padding: 0;
+   }
+
+   img,
+   video,
+   iframe {
+      display: block;
+      max-inline-size: 100%;
+      block-size: auto;
+      border-style: none;
+   }
+
+   input,
+   select,
+   textarea,
+   button {
+      font: inherit;
+   }
+
+   input:not(:where([type='submit'], [type='checkbox'], [type='radio'], [type='button'], [type='reset'], [type='file'])) {
+      inline-size: 100%;
+      border-width: 1px;
+      border-style: solid;
+      box-shadow: none;
+   }
+
+   textarea {
+      field-sizing: content;
+      block-size: 4.875em;
+      min-block-size: 2.25em;
+      inline-size: 100%;
+      max-inline-size: 100%;
+      resize: vertical;
+      border-width: 1px;
+      border-style: solid;
+      box-shadow: none;
+   }
+
+   a[href]:focus-visible,
+   button:focus-visible,
+   input:focus-visible,
+   textarea:focus-visible,
+   select:focus-visible,
+   details:focus-visible,
+   [tabindex]:focus-visible {
+      box-shadow: 0 0 0 0.125em Canvas;
+      outline: 0.125em solid CanvasText;
+      outline-offset: 2px;
+   }
+}

@@ -26,17 +26,10 @@ h2,
    letter-spacing: 0.05em;
 }
 
-.doc-heading-1 {
-   font-family: 'Oswald';
-   font-weight: 600;
-   font-size: 2em;
-   text-transform: uppercase;
-   letter-spacing: 0.05em;
-   text-align: center;
-   color: var(--doc-txt-medium);
-   //padding: 0 0 1em;
+.doc-pre-heading + .doc-heading-1 {
+   padding: 0 0 1em;
    margin: 0 0 1em;
-   //border-bottom: 3px dotted var(--doc-border);
+   border-bottom: 3px dotted var(--doc-border);
 }
 
 //h1,
@@ -59,7 +52,7 @@ h2 {
 }
 
 h3,
-.subTitle,
+.doc-pre-heading,
 .cover__heading,
 .cover__subTitle {
    font-family: 'Vollkorn';
