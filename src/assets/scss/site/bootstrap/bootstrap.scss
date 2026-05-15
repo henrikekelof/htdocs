@@ -12,13 +12,13 @@
 @import "utilities";
 
 // Layout & components
-@import "root";
-@import "reboot";
+//@import "root";
+//@import "reboot";
 //@import "type";
 //@import "images";
 //@import "containers";
 //@import "grid";
-//@import "tables";
+@import "tables";
 @import "forms";
 @import "buttons";
 //@import "transitions";
@@ -28,7 +28,7 @@
 //@import "navbar";
 //@import "card";
 //@import "accordion";
-//@import "breadcrumb";
+@import "breadcrumb";
 //@import "pagination";
 //@import "badge";
 @import "alert";

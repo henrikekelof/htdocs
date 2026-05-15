@@ -1,5 +1,15 @@
 h1,
 h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'Oswald';
+   font-weight: 600;
+   margin-top: 0;
+   margin-bottom: 0.5em;
+}
+
 .doc-main-heading,
 .doc-heading-1 {
    font-family: 'Oswald';
@@ -18,7 +28,7 @@ h2,
    height: 0.875em;
    stroke-width: 0;
    stroke: currentColor;
-   fill: none;
+   fill: currentColor;
 }
 
 .doc-heading-1 {
@@ -46,12 +56,14 @@ h2,
 //   border-bottom: 3px dotted var(--text-light);
 //}
 
-h2 {
+.doc-content > h2,
+.doc-heading-2 {
    font-size: 1.5em;
    margin: 2em 0 1em;
 }
 
-h3,
+.doc-content > h3,
+.doc-heading-3,
 .doc-pre-heading,
 .cover__heading,
 .cover__subTitle {
@@ -74,7 +86,8 @@ h3,
    margin: 0;
 }
 
-h3 {
+h.doc-content > h3,
+.doc-heading-3 {
    margin: 2em 0 0.5em;
 }
 
@@ -91,22 +104,23 @@ h3 {
    text-transform: uppercase;
 }
 
-h4,
-h5,
-h6 {
-   font-family: 'Open Sans';
-   font-weight: 600;
-   font-size: 1.2em;
-   text-align: center;
-   color: var(--doc-txt-light);
-   margin: 2em 0 0.5em;
-}
+//h4,
+//h5,
+//h6 {
+//   font-family: 'Open Sans';
+//   font-weight: 600;
+//   font-size: 1.2em;
+//   text-align: center;
+//   color: var(--doc-txt-light);
+//   margin: 2em 0 0.5em;
+//}
 
 h5,
 h6 {
    font-size: 1em;
 }
 
+p,
 .doc-p {
    margin: 0 0 1em;
 }

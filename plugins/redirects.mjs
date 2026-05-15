@@ -2,5 +2,11 @@
 // old path: new path.
 
 export const redirects = {
-   '/test-redirect-from/': '/test-redirect-to',
+   '/golf/spel/': '/golf/',
+   '/golf/spel/fyra/': '/golf/',
+   '/golf/spel/ovrigt/': '/golf/',
+   '/golf/spel/puttning/': '/golf/',
+   '/golf/spel/tre/': '/golf/',
+   '/golf/spel/tre-fyra/': '/golf/',
+   '/golf/spel/tva/': '/golf/',
 };

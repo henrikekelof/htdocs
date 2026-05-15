@@ -4,23 +4,23 @@ import '../../assets/scss/base64-encoder.scss';
 ---
 
 <Default indexing={false} title="Base64 Image Encoder">
-   <button id="b64-canvas-png-btn" class="doc-button doc-button--small" disabled
+   <button id="b64-canvas-png-btn" class="btn btn-outline-secondary btn-sm" disabled
       >Copy as PNG</button
    >
    <button
       id="b64-canvas-jpeg-btn"
-      class="doc-button doc-button--small"
+      class="btn btn-outline-secondary btn-sm"
       disabled>Copy as JPEG</button
    >
    <button
       id="b64-canvas-webp-btn"
-      class="doc-button doc-button--small"
+      class="btn btn-outline-secondary btn-sm"
       disabled>Copy as WEBP</button
    >
-   <div class="doc-alert doc-alert--success" style="display: none;">
+   <div class="alert alert-success mt-4" style="display: none;">
       Base 64 image copied to clipboard.
    </div>
-   <div class="doc-alert doc-alert--error" style="display: none;">
+   <div class="alert alert-error mt-4" style="display: none;">
       Could not copy base 64 image to clipboard.
    </div>
    <div id="b64-canvas-container" class="b64-canvas-container">
