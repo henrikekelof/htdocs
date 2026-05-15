@@ -1,0 +1,35 @@
+---
+import Master from './master/Master.astro';
+const { frontmatter, indexing, title, url } = Astro.props;
+const _title = frontmatter?.title || title || '';
+import '../assets/scss/golf.scss';
+---
+
+<Master
+   frontmatter={frontmatter}
+   indexing={indexing}
+   title={title}
+   heading={frontmatter.showHeading}
+   bodyClass="golf"
+>
+   {
+      url !== '/golf/' && (
+         <nav aria-label="breadcrumb" slot="pre-main-heading">
+            <ol class="breadcrumb m-0 mb-4 fs-6 border-bottom">
+               <li class="breadcrumb-item">
+                  <a href="/golf/">
+                     <svg class="doc-icon">
+                        <use href="/icons/site-icons.svg#bi-house" />
+                     </svg>
+                     Golf
+                  </a>
+               </li>
+               <li class="breadcrumb-item active" aria-current="page">
+                  {_title}
+               </li>
+            </ol>
+         </nav>
+      )
+   }
+   <slot />
+</Master>

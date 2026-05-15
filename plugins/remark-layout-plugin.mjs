@@ -3,6 +3,7 @@ import path from 'path';
 export function remarkLayoutPlugin() {
    const templates = {
       default: path.resolve('src/templates/Default.astro'),
+      golf: path.resolve('src/templates/Golf.astro'),
       startpage: path.resolve('src/templates/Startpage.astro'),
       navigation: path.resolve('src/templates/Navigation.astro'),
    };

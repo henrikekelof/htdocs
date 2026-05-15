@@ -112,7 +112,7 @@ function getImgAsString(canvasElementId, mimeType) {
    });
 
    async function setClipboard(text) {
-      document.querySelector('.doc-alert').style.setProperty('display', 'none');
+      document.querySelector('.alert').style.setProperty('display', 'none');
       try {
          const type = 'text/plain';
          const clipboardItemData = {
@@ -122,12 +122,12 @@ function getImgAsString(canvasElementId, mimeType) {
          await navigator.clipboard.write([clipboardItem]);
          document.getElementById('output').innerHTML = text;
          document
-            .querySelector('.doc-alert--success')
+            .querySelector('.alert-success')
             .style.setProperty('display', 'block');
       } catch (error) {
          document.getElementById('output').innerHTML = '';
          document
-            .querySelector('.doc-alert--error')
+            .querySelector('.alert-error')
             .style.setProperty('display', 'block');
          console.error(error);
       }

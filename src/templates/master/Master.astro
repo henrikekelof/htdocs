@@ -29,6 +29,7 @@ const showHeading = heading !== false;
          <div class="doc-layout">
             <div class="doc-container">
                <main class="doc-content doc-dynamic-font">
+                  <slot name="pre-main-heading" />
                   {
                      showHeading && _title && (
                         <h1 class="doc-main-heading">{_title}</h1>
