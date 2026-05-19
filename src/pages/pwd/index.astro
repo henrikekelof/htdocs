@@ -2,12 +2,9 @@
 import Default from '../../templates/Default.astro';
 ---
 
-<Default>
+<Default title="Generate Password(s)">
    <div class="container">
-
-      <h1 class="doc-main-heading">Generate Password(s)</h1>
-
-      <div class="list-group mt-4 mb-4" id="generated_passphrases"></div>
+      <div class="list-group mt-4 mb-4 fs-6" id="generated_passphrases"></div>
 
       <div class="form-check mb-4">
          <input
@@ -21,7 +18,7 @@ import Default from '../../templates/Default.astro';
          </label>
       </div>
 
-      <div class="input-group mb-4">
+      <div class="input-group mb-5">
          <button
             id="generate_passphrases"
             class="btn btn-outline-secondary"
@@ -40,19 +37,11 @@ import Default from '../../templates/Default.astro';
       </div>
 
       <div class="alert alert-success" role="alert" id="entropy_alert">
-         <h4 class="alert-heading">Entropy</h4>
-         <p>
             <span
-               >These settings should generate a <b
-                  ><span id="passphrase_strength">Reasonable</span></b
-               > passphrase with about 2<sup id="calculated_entropy">46</sup> bits
-               of entropy.</span
+               ><b
+                  ><span id="passphrase_strength">Reasonable</span> entropy</b
+               >  — 2<sup id="calculated_entropy">46</sup> bits.</span
             >
-            <span id="entropy_message"
-               >These passphrases should be strong enough to protect network and
-               corporate accounts.</span
-            >
-         </p>
       </div>
    </div>
    <script is:inline src="/js/pwd-words.js"></script>

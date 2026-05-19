@@ -1,8 +1,13 @@
 ---
 import Master from './master/Master.astro';
-const { frontmatter, indexing, title } = Astro.props;
+const { frontmatter, heading, indexing, title } = Astro.props;
 ---
 
-<Master frontmatter={frontmatter} indexing={indexing} title={title}>
+<Master
+   frontmatter={frontmatter}
+   heading={heading}
+   indexing={indexing}
+   title={title}
+>
    <slot />
 </Master>
