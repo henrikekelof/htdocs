@@ -2,6 +2,7 @@
    const PASS_PHRASE_COUNT = 5;
    const PASS_PHRASE_LENGTH = 4;
    const MIN_WORD_LENGTH = 3;
+   const NUMERIC_CHOICES = 10000;
 
    const maxWordLength = (words) =>
       words.reduce(
@@ -30,23 +31,15 @@
    };
 
    const filterByLength = (words, maxLength) =>
-      words.filter((word) => word.length <= maxLength);
-
-   const fallbackCopyText = (text) => {
-      const tmpInput = document.createElement('input');
-
-      tmpInput.value = text;
-      document.body.appendChild(tmpInput);
-      tmpInput.select();
-      document.execCommand('copy');
-      document.body.removeChild(tmpInput);
-   };
+      words.filter(
+         (word) => word.length >= MIN_WORD_LENGTH && word.length <= maxLength
+      );
 
    const copyPassPhrase = async (passphrase) => {
       try {
          await navigator.clipboard.writeText(passphrase);
       } catch {
-         fallbackCopyText(passphrase);
+         // Clipboard access can be denied or unavailable outside secure contexts.
       }
    };
 
@@ -67,7 +60,7 @@
 
       for (let i = 0; i < passPhraseLength; i += 1) {
          if (i === numericIndex) {
-            passPhrase.push(String(getRandomInt(10000)));
+            passPhrase.push(String(getRandomInt(NUMERIC_CHOICES)));
             continue;
          }
 
@@ -92,7 +85,6 @@
       const generateButton = document.getElementById('generate_passphrases');
       const entropyAlert = document.getElementById('entropy_alert');
       const passphraseStrength = document.getElementById('passphrase_strength');
-      const entropyMessage = document.getElementById('entropy_message');
       const calculatedEntropy = document.getElementById('calculated_entropy');
 
       if (
@@ -102,7 +94,6 @@
          !generateButton ||
          !entropyAlert ||
          !passphraseStrength ||
-         !entropyMessage ||
          !calculatedEntropy
       ) {
          return;
@@ -163,34 +154,51 @@
          generatedPassphrases.replaceChildren(fragment);
       };
 
+      const calculateEntropy = (wordCount) => {
+         if (includeNumbers.checked) {
+            return (
+               Math.log2(wordCount) * (PASS_PHRASE_LENGTH - 1) +
+               Math.log2(NUMERIC_CHOICES) +
+               Math.log2(PASS_PHRASE_LENGTH)
+            );
+         }
+
+         return Math.log2(wordCount) * PASS_PHRASE_LENGTH;
+      };
+
       const renderEntropy = () => {
          const filteredWords = filterByLength(words, getMaxWordLength());
-         const entropy = Math.log2(filteredWords.length) * PASS_PHRASE_LENGTH;
+         const entropy = calculateEntropy(filteredWords.length);
 
-         if (entropy <= 28) {
+         /*
+          Val	Utan siffror	Med siffror
+          maxlängd 3	30 bits	38 bits
+          maxlängd 4	38 bits	44 bits
+          maxlängd 5	41 bits	46 bits
+          maxlängd 6	43 bits	48 bits
+          maxlängd 16/default	47 bits	50 bits
+
+          Så med nuvarande gränser i pwd.js (line 175):
+          Very Weak <= 28: kan inte uppstå.
+          Weak <= 35: kan bara uppstå vid maxlängd 3 utan siffror.
+          Reasonable <= 59: nästan allt hamnar här.
+          Strong <= 127: kan inte uppstå.
+          Very Strong > 127: kan inte uppstå.
+
+         * */
+         // if (entropy < 36) Weak;
+         // else if (entropy < 45) Reasonable;
+         // else Strong;
+
+         if (entropy < 36) {
             entropyAlert.className = 'alert alert-danger';
-            passphraseStrength.textContent = 'Very Weak';
-            entropyMessage.textContent =
-               "These passphrases aren't strong enough to protect a teenager's diary.";
-         } else if (entropy <= 35) {
-            entropyAlert.className = 'alert alert-warning';
             passphraseStrength.textContent = 'Weak';
-            entropyMessage.textContent =
-               'These passphrases should keep out most people and should be barely adequate for protecting a personal computer login.';
-         } else if (entropy <= 59) {
-            entropyAlert.className = 'alert alert-success';
+         } else if (entropy < 45) {
+            entropyAlert.className = 'alert alert-warning';
             passphraseStrength.textContent = 'Reasonable';
-            entropyMessage.textContent =
-               'These passphrases should be strong enough to protect network and corporate accounts.';
-         } else if (entropy <= 127) {
-            entropyAlert.className = 'alert alert-success';
-            passphraseStrength.textContent = 'Strong';
-            entropyMessage.textContent =
-               'These passphrases should be good for protecting financial information.';
          } else {
             entropyAlert.className = 'alert alert-success';
-            passphraseStrength.textContent = 'Very Strong';
-            entropyMessage.textContent = '';
+            passphraseStrength.textContent = 'Strong';
          }
 
          calculatedEntropy.textContent = entropy.toFixed(0);
@@ -211,7 +219,10 @@
          renderEntropy();
          renderPassPhrases();
       });
-      includeNumbers.addEventListener('change', renderPassPhrases);
+      includeNumbers.addEventListener('change', () => {
+         renderEntropy();
+         renderPassPhrases();
+      });
 
       populateWordLengthOptions();
       renderEntropy();
