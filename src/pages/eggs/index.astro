@@ -1,0 +1,90 @@
+---
+import Default from '../../templates/Default.astro';
+import '../../assets/scss/eggs.scss';
+---
+
+<Default indexing={false} title="Koktid för ägg">
+   <p class="egg-note">Lägg ner äggen först när vattnet kokar.</p>
+
+   <form id="egg-calculator" class="egg-calculator">
+      <div class="mb-3">
+         <label class="form-label" for="egg-weight">Vikt</label>
+         <div class="input-group">
+            <input
+               id="egg-weight"
+               class="form-control"
+               type="number"
+               inputmode="decimal"
+               min="1"
+               step="1"
+               value="60"
+            />
+            <span class="input-group-text">g</span>
+         </div>
+         <p class="form-text fs-6">
+            <a
+               href="https://www.svenskaagg.se/om-agg/funfacts"
+               class="link-secondary icon-link"
+               ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 8 5"
+                  class="bi"
+                  aria-hidden="true"
+               >
+                  <path fill="#005293" d="M0 0h8v5H0Z"></path>
+                  <path stroke="#fecb00" d="M0 2.5h8M3 0v5"></path>
+               </svg>Viktklasser (g)</a
+            >:<br /><span class="badge text-bg-secondary">S</span> 43-53
+            <span class="badge text-bg-secondary">M</span> 53-63 <span
+               class="badge text-bg-secondary">L</span
+            > 63-73 <span class="badge text-bg-secondary">XL</span> 74+
+         </p>
+      </div>
+
+      <div class="mb-3">
+         <label class="form-label" for="egg-temperature">Starttemperatur</label>
+         <select id="egg-temperature" class="form-select">
+            <option value="4" selected>Kall kyl, 4&deg;C</option>
+            <option value="8">Varm kyl, 8&deg;C</option>
+            <option value="19">Rumstemp kall, 19&deg;C</option>
+            <option value="22">Rumstemp, 22&deg;C</option>
+            <option value="25">Rumstemp varm, 25&deg;C</option>
+         </select>
+      </div>
+   </form>
+
+   <dl class="egg-results" aria-live="polite">
+      <div class="egg-result alert alert-success">
+         <dt>Löst</dt>
+         <dd id="egg-soft">-</dd>
+      </div>
+      <div class="egg-result alert alert-warning">
+         <dt>Mellan</dt>
+         <dd id="egg-medium">-</dd>
+      </div>
+      <div class="egg-result alert alert-danger">
+         <dt>Hårt</dt>
+         <dd id="egg-hard">-</dd>
+      </div>
+   </dl>
+
+   <footer class="egg-footer">
+      <hr />
+      <p class="doc-p">
+         Källa: <a
+            href="https://www.exeter.ac.uk/research-centres/theoretical-physics/boiling-an-egg/"
+            >University of Exeter</a
+         >.
+      </p>
+      <p class="doc-p">
+         Se även <a href="https://blog.doublehelix.csiro.au/boil-an-egg/"
+            >Double Helix</a
+         > och <a
+            href="https://www.seriouseats.com/the-secrets-to-peeling-hard-boiled-eggs"
+            >Serious Eats</a
+         >.
+      </p>
+   </footer>
+
+   <script src="../../assets/js/eggs.js"></script>
+</Default>
