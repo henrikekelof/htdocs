@@ -6,7 +6,7 @@ showHeading: true
 
 _(Split Sixes, English, Cricket)_
 
-Köpenhamnare är en typ av matchspel för tre spelare. 
+Köpenhamnare är en typ av matchspel för tre spelare.
 
 Sex poäng delas ut på varje hål:
 
@@ -74,7 +74,6 @@ Sex poäng delas ut på varje hål:
         </tr>
     </tbody>
 </table>
-
 
 Handicap reduceras inte. Utgå från spelaren med lägst handicap. Sätt denne till noll
 och reducera övriga spelares erhållna slag med motsvarande. Exempel: Spelare A har 6 erhållna slag,

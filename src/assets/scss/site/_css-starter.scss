@@ -4,12 +4,14 @@
    html {
       color-scheme: light dark;
       hanging-punctuation: first allow-end last;
-      font: 1em / 1.5 system-ui, sans-serif;
+      font:
+         1em / 1.5 system-ui,
+         sans-serif;
       font: -apple-system-body;
       line-height: 1.5;
    }
    @supports (font: -apple-system-body) and
-    (not (-webkit-touch-callout: default)) {
+      (not (-webkit-touch-callout: default)) {
       html {
          font-size: 1em;
       }
@@ -62,7 +64,16 @@
       font: inherit;
    }
 
-   input:not(:where([type='submit'], [type='checkbox'], [type='radio'], [type='button'], [type='reset'], [type='file'])) {
+   input:not(
+      :where(
+         [type='submit'],
+         [type='checkbox'],
+         [type='radio'],
+         [type='button'],
+         [type='reset'],
+         [type='file']
+      )
+   ) {
       inline-size: 100%;
       border-width: 1px;
       border-style: solid;

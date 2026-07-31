@@ -11,7 +11,7 @@ När man spelar Wolf på tre så kommer det alltid vara en mot två.
 ## Poäng
 
 | Variant    | Ensam vinnare | Vinnande lag    |
-|------------|---------------|-----------------|
+| ---------- | ------------- | --------------- |
 | Wolf       | 1 p           | 1 p per spelare |
 | Lone Wolf  | 2 p           | 1 p per spelare |
 | Pig        | 2 p           | 1 p per spelare |

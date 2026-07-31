@@ -6,7 +6,7 @@ showHeading: true
 
 Läs först reglerna för [Matchspel](/golf/spel/tva/match/).
 
-Fyrboll match spelas i lag, två mot två, och lagets bästa resultat på varje hål räknas. 
+Fyrboll match spelas i lag, två mot två, och lagets bästa resultat på varje hål räknas.
 En spelare som är chanslös på ett hål kan plocka upp bollen och förlita sig till sin lagkamrat.
 
 Observera att skänkta puttar inte får slås om de kan hjälpa lagkamraten.
