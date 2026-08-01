@@ -4,69 +4,142 @@ import '../../assets/scss/eggs.scss';
 ---
 
 <Default indexing={false} title="Koktid för ägg">
-   <p class="egg-note">Lägg ner äggen först när vattnet kokar.</p>
-
    <form id="egg-calculator" class="egg-calculator">
       <div class="mb-3">
-         <label class="form-label" for="egg-weight">Vikt</label>
-         <div class="input-group">
+         <label class="form-label" for="egg-weight">Vikt (g)</label>
+         <div class="input-group egg-weight-control">
+            <button
+               id="egg-weight-decrease"
+               class="btn btn-outline-secondary egg-step-button"
+               type="button"
+               aria-label="Minska vikt">&minus;</button
+            >
             <input
                id="egg-weight"
-               class="form-control"
+               class="form-control egg-number-input"
                type="number"
                inputmode="decimal"
                min="1"
                step="1"
-               value="60"
+               value="63"
             />
-            <span class="input-group-text">g</span>
+            <button
+               id="egg-weight-increase"
+               class="btn btn-outline-secondary egg-step-button"
+               type="button"
+               aria-label="Öka vikt">+</button
+            >
          </div>
       </div>
 
       <div class="mb-3">
-         <label class="form-label" for="egg-temperature">Starttemperatur</label>
-         <select id="egg-temperature" class="form-select">
-            <option value="4" selected>Kall kyl, 4&deg;C</option>
-            <option value="8">Varm kyl, 8&deg;C</option>
-            <option value="19">Rumstemp kall, 19&deg;C</option>
-            <option value="22">Rumstemp, 22&deg;C</option>
-            <option value="25">Rumstemp varm, 25&deg;C</option>
-         </select>
+         <label class="form-label" for="egg-temperature"
+            >Starttemperatur (&deg;C)</label
+         >
+         <div class="input-group egg-temperature-control">
+            <button
+               id="egg-temperature-decrease"
+               class="btn btn-outline-secondary egg-step-button"
+               type="button"
+               aria-label="Minska starttemperatur">&minus;</button
+            >
+            <input
+               id="egg-temperature"
+               class="form-control egg-number-input"
+               type="number"
+               inputmode="decimal"
+               min="0"
+               max="99"
+               step="1"
+               value="4"
+            />
+            <button
+               id="egg-temperature-increase"
+               class="btn btn-outline-secondary egg-step-button"
+               type="button"
+               aria-label="Öka starttemperatur">+</button
+            >
+         </div>
+         <div
+            class="btn-group btn-group-sm egg-temperature-presets"
+            role="group"
+            aria-label="Förvalda starttemperaturer"
+         >
+            <button
+               class="btn btn-outline-secondary"
+               type="button"
+               data-egg-temperature-preset="4">4&deg;</button
+            >
+            <button
+               class="btn btn-outline-secondary"
+               type="button"
+               data-egg-temperature-preset="8">8&deg;</button
+            >
+            <button
+               class="btn btn-outline-secondary"
+               type="button"
+               data-egg-temperature-preset="19">19&deg;</button
+            >
+            <button
+               class="btn btn-outline-secondary"
+               type="button"
+               data-egg-temperature-preset="22">22&deg;</button
+            >
+            <button
+               class="btn btn-outline-secondary"
+               type="button"
+               data-egg-temperature-preset="25">25&deg;</button
+            >
+         </div>
       </div>
    </form>
 
    <dl class="egg-results" aria-live="polite">
-      <div class="egg-result alert alert-success">
+      <div class="egg-result egg-result--runny">
+         <dt>Rinnande</dt>
+         <dd id="egg-runny">-</dd>
+      </div>
+      <div class="egg-result egg-result--very-soft">
+         <dt>Löst +</dt>
+         <dd id="egg-very-soft">-</dd>
+      </div>
+      <div class="egg-result egg-result--soft">
          <dt>Löst</dt>
          <dd id="egg-soft">-</dd>
       </div>
-      <div class="egg-result alert alert-warning">
-         <dt>Mellan</dt>
-         <dd id="egg-medium">-</dd>
+      <div class="egg-result egg-result--creamy">
+         <dt>Krämigt</dt>
+         <dd id="egg-creamy">-</dd>
       </div>
-      <div class="egg-result alert alert-danger">
+      <div class="egg-result egg-result--firm">
+         <dt>Fast</dt>
+         <dd id="egg-firm">-</dd>
+      </div>
+      <div class="egg-result egg-result--hard">
          <dt>Hårt</dt>
          <dd id="egg-hard">-</dd>
       </div>
    </dl>
 
+   <p class="egg-note">OBS! Lägg ner äggen först när vattnet kokar.</p>
+
    <p class="form-text fs-6">
       <a
          href="https://www.svenskaagg.se/om-agg/funfacts"
          class="link-secondary icon-link"
-      ><svg
-         xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 8 5"
-         class="bi"
-         aria-hidden="true"
-      >
-         <path fill="#005293" d="M0 0h8v5H0Z"></path>
-         <path stroke="#fecb00" d="M0 2.5h8M3 0v5"></path>
-      </svg>Svenska viktklasser (g)</a
+         ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 8 5"
+            class="bi"
+            aria-hidden="true"
+         >
+            <path fill="#005293" d="M0 0h8v5H0Z"></path>
+            <path stroke="#fecb00" d="M0 2.5h8M3 0v5"></path>
+         </svg>Svenska viktklasser (g)</a
       >:<br /><span class="badge text-bg-secondary">S</span> 43-53
       <span class="badge text-bg-secondary">M</span> 53-63 <span
-      class="badge text-bg-secondary">L</span
-   > 63-73 <span class="badge text-bg-secondary">XL</span> 74+
+         class="badge text-bg-secondary">L</span
+      > 63-73 <span class="badge text-bg-secondary">XL</span> 74+
    </p>
 
    <footer class="egg-footer">

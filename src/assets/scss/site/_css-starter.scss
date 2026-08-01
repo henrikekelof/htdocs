@@ -1,4 +1,4 @@
-@layer starter, core, components;
+@layer starter, bootstrap, core, components;
 
 @layer starter {
    html {
@@ -91,7 +91,9 @@
       border-style: solid;
       box-shadow: none;
    }
+}
 
+@layer core {
    a[href]:focus-visible,
    button:focus-visible,
    input:focus-visible,
