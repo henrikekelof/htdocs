@@ -1,6 +1,6 @@
 import { c as createComponent, e as createAstro, b as renderComponent, a as renderTemplate, f as renderSlot } from './site.chunk.CxLaPaND.js';
 import 'kleur/colors';
-import { $ as $$Master } from './site.chunk.BBmBt5FA.js';
+import { $ as $$Master } from './site.chunk.C3kegn27.js';
 
 const $$Astro = createAstro();
 const $$Default = createComponent(($$result, $$props, $$slots) => {
